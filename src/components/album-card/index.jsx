@@ -1,7 +1,7 @@
 const index = () => {
     return (
         <>
-            <div className="max-w-md mx-auto bg-[#323232] text-white rounded-xl shadow-md flex">
+            <div className="max-w-lg mx-auto bg-[#323232] text-white rounded-xl shadow-md flex">
                 {/* Gambar */}
                 <img className="w-64 h-64 object-cover rounded-xl m-6" src="https://via.placeholder.com/300" alt="Album Art" />
 

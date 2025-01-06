@@ -2,6 +2,7 @@ import Sidebar from "../../components/sidebar/index";
 import Navbar from "../../components/navbar/index";
 import AlbumCard from "../../components/album-card/index";
 import ArtistCard from "../../components/artist-card/index";
+import TrackCard from "../../components/track-card/index";
 
 const index = () => {
     return (
@@ -48,7 +49,14 @@ const index = () => {
                             </div>
 
                             {/* Tracks */}
-                            <p className="text-white text-4xl font-bold pl-5 pt-5 pb-3">Tracks</p>
+                            <div>
+                                <p className="text-white text-4xl font-bold pl-5 pt-5 pb-3">Tracks</p>
+                                <div className="flex flex-col">
+                                    <TrackCard />
+                                    <TrackCard />
+                                    <TrackCard />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

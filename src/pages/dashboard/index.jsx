@@ -1,8 +1,8 @@
-import Sidebar from "../../components/sidebar/index";
-import Navbar from "../../components/navbar/index";
-import AlbumCard from "../../components/album-card/index";
-import ArtistCard from "../../components/artist-card/index";
-import TrackCard from "../../components/track-card/index";
+import Sidebar from "../../components/sidebar/Index";
+import Navbar from "../../components/navbar/Index";
+import AlbumCard from "../../components/album-card/Index";
+import ArtistCard from "../../components/artist-card/Index";
+import TrackCard from "../../components/track-card/Index";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
@@ -24,11 +24,15 @@ const Index = () => {
                         limit: 15,
                     },
                     headers: {
-                        Authorization: "Bearer BQAo7LhBq2hK05U9Mi6nb_ZqGcBMHN6069gwMByuHr2ziBvseaGK8d8kz0Sa_CXhTy7yJLH2fvN0x7OULnlOUX6A15TFx5PRSKj_lntT2CKfD0arcg0",
+                        Authorization: "Bearer BQDoFB5ufmgn9GlAeRvlR4YJ27-8U11EHmDUbumLZvbQY1Dg6GIS0ai1FrKn2KPVn_wasfH2YxNwCVivqSemF6a-IdzDpuTULDMq8WCQqXDKksW7I4M",
                     },
                 });
-                const fetched_items = response.data;
-                console.log(fetched_items);
+                const fetched_artists = response.data.artists.items;
+                const fetched_albums = response.data.albums;
+                const fetched_tracks = response.data.tracks;
+                setSearchedAlbums(fetched_albums);
+                setSearchedArtists(fetched_artists);
+                setSearchedTracks(fetched_tracks);
             } catch (error) {
                 console.log(error);
             }
@@ -54,16 +58,13 @@ const Index = () => {
                             <div>
                                 <p className="text-white text-4xl font-bold pl-5 pt-5 pb-3">Artists</p>
                                 <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 ">
-                                    <ArtistCard />
-                                    <ArtistCard />
-                                    <ArtistCard />
-                                    <ArtistCard />
-                                    <ArtistCard />
-                                    <ArtistCard />
-                                    <ArtistCard />
-                                    <ArtistCard />
-                                    <ArtistCard />
-                                    <ArtistCard />
+                                    {searchedArtists.map((artist) => {
+                                        return (
+                                            <div key={artist.id}>
+                                                <ArtistCard id={artist.id} name={artist.name} genres={artist.genres} />
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
 

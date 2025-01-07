@@ -1,7 +1,7 @@
 import notification_png from "../../assets/img/bell.png";
 import avatar_png from "../../assets/img/cat.png";
 
-const index = () => {
+const Index = () => {
     return (
         <>
             <div className="flex">
@@ -27,4 +27,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default Index;

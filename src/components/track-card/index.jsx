@@ -1,6 +1,6 @@
 import play_png from "../../assets/img/play.png";
 
-const index = () => {
+const Index = ({ name, artistName, duration }) => {
     return (
         <>
             <div className="py-2">
@@ -8,13 +8,13 @@ const index = () => {
                     <button>
                         <img src={play_png} className="w-8 h-8" />
                     </button>
-                    <p className="text-white font-bold">Paris</p>
-                    <p className="text-white italic">The Chainsmokers</p>
-                    <p className="text-white">4:28</p>
+                    <p className="text-white font-bold">{name}</p>
+                    <p className="text-white italic">{artistName}</p>
+                    <p className="text-white">{duration}</p>
                 </div>
             </div>
         </>
     );
 };
 
-export default index;
+export default Index;

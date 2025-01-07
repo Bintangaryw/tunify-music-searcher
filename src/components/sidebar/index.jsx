@@ -5,7 +5,7 @@ import track_png from "../../assets/img/music-player.png";
 import logout_png from "../../assets/img/export.png";
 import profile_png from "../../assets/img/user.png";
 
-const index = () => {
+const Index = () => {
     return (
         <>
             <div className="h-screen w-72 bg-[#323232] text-white rounded-xl flex flex-col">
@@ -55,4 +55,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default Index;

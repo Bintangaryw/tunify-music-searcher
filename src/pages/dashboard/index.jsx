@@ -8,13 +8,36 @@ import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 
 const Index = () => {
-    // const [useSearchParams]
+    const [token, setToken] = useState(""); // To get latest token
     const [searchedArtists, setSearchedArtists] = useState([]);
     const [searchedAlbums, setSearchedAlbums] = useState([]);
     const [searchedTracks, setSearchedTracks] = useState([]);
 
     useEffect(() => {
+        const getAccessToken = async () => {
+            const clientID = `${import.meta.env.VITE_API_CLIENT_ID}`;
+            const clientSecret = `${import.meta.env.VITE_API_CLIENT_SECRET}`;
+            const basicAuth = btoa(`${clientID}:${clientSecret}`);
+            try {
+                const response = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({ grant_type: "client_credentials" }), {
+                    headers: {
+                        Authorization: `Basic ${basicAuth}`,
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                });
+                setToken(response.data.access_token);
+            } catch (error) {
+                console.error("Error fetching access token:", error);
+            }
+        };
+        getAccessToken();
+    }, []);
+
+    useEffect(() => {
         const getSearchedItems = async () => {
+            if (!token) {
+                return;
+            }
             try {
                 const response = await axios.get("https://api.spotify.com/v1/search", {
                     params: {
@@ -24,7 +47,7 @@ const Index = () => {
                         limit: 15,
                     },
                     headers: {
-                        Authorization: "Bearer BQDoFB5ufmgn9GlAeRvlR4YJ27-8U11EHmDUbumLZvbQY1Dg6GIS0ai1FrKn2KPVn_wasfH2YxNwCVivqSemF6a-IdzDpuTULDMq8WCQqXDKksW7I4M",
+                        Authorization: `Bearer ${token}`,
                     },
                 });
                 const fetched_artists = response.data.artists.items;
@@ -38,7 +61,7 @@ const Index = () => {
             }
         };
         getSearchedItems();
-    }, []);
+    }, [token]);
 
     return (
         <>

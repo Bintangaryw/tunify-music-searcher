@@ -41,17 +41,17 @@ const Index = () => {
             try {
                 const response = await axios.get("https://api.spotify.com/v1/search", {
                     params: {
-                        q: "Avenged Sevenfold",
+                        q: "Drake",
                         type: "artist,album,track",
                         market: "ID",
-                        limit: 15,
+                        limit: 7,
                     },
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
                 const fetched_artists = response.data.artists.items;
-                const fetched_albums = response.data.albums;
+                const fetched_albums = response.data.albums.items;
                 const fetched_tracks = response.data.tracks;
                 setSearchedAlbums(fetched_albums);
                 setSearchedArtists(fetched_artists);
@@ -84,7 +84,7 @@ const Index = () => {
                                     {searchedArtists.map((artist) => {
                                         return (
                                             <div key={artist.id}>
-                                                <ArtistCard id={artist.id} name={artist.name} genres={artist.genres} />
+                                                <ArtistCard id={artist.id} name={artist.name} genres={artist.genres} image={artist.images[0]?.url} />
                                             </div>
                                         );
                                     })}
@@ -95,11 +95,13 @@ const Index = () => {
                             <div>
                                 <p className="text-white text-4xl font-bold pl-5 pt-5 pb-3">Albums</p>
                                 <div className="grid grid-cols-3 gap-2">
-                                    <AlbumCard />
-                                    <AlbumCard />
-                                    <AlbumCard />
-                                    <AlbumCard />
-                                    <AlbumCard />
+                                    {searchedAlbums.map((album) => {
+                                        return (
+                                            <div key={album.id}>
+                                                <AlbumCard id={album.id} name={album.name} artistName={album.artists[0].name} image={album.images[0].url} />
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
 

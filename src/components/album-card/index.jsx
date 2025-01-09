@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const Index = ({ id, name, artistName, image }) => {
@@ -19,6 +20,13 @@ const Index = ({ id, name, artistName, image }) => {
             </div>
         </>
     );
+};
+
+Index.propTypes = {
+    id: PropTypes.any,
+    name: PropTypes.any,
+    artistName: PropTypes.any,
+    image: PropTypes.any,
 };
 
 export default Index;

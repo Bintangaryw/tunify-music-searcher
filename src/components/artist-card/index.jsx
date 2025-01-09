@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Index = ({ id, name, genres, image }) => {
     return (
@@ -19,6 +20,12 @@ const Index = ({ id, name, genres, image }) => {
             </Link>
         </>
     );
+};
+Index.propTypes = {
+    id: PropTypes.any,
+    name: PropTypes.any,
+    genres: PropTypes.any,
+    image: PropTypes.any,
 };
 
 export default Index;

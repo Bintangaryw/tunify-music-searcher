@@ -3,12 +3,11 @@ import Navbar from "../../components/navbar/Index";
 import AlbumCard from "../../components/album-card/Index";
 import ArtistCard from "../../components/artist-card/Index";
 import TrackCard from "../../components/track-card/Index";
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 const Index = () => {
-    const [token, setToken] = useState(""); // To get latest token
+    const [token, setToken] = useState("");
     const [searchedArtists, setSearchedArtists] = useState([]);
     const [searchedAlbums, setSearchedAlbums] = useState([]);
     const [searchedTracks, setSearchedTracks] = useState([]);

@@ -5,7 +5,7 @@ const Index = ({ id, name, genres, image }) => {
     return (
         <>
             <Link to={`/${id}`}>
-                <div className="max-w-sm h-full mx-auto bg-[#323232] text-white rounded-xl shadow-md overflow-hidden">
+                <div className="max-w-sm h-full mx-auto text-white rounded-xl shadow-lg overflow-hidden hover:bg-[#323232]">
                     {/* Gambar */}
                     <div className="p-6">
                         <img className="w-full h-64 object-cover rounded-xl" src={image} />

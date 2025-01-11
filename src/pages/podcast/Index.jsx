@@ -1,8 +1,5 @@
 import Sidebar from "../../components/sidebar/Index";
 import Navbar from "../../components/navbar/Index";
-import GlobalTopArtists from "../../components/content/music-content/international-artist-list/Index";
-import IndonesiaTopArtists from "../../components/content/music-content/indonesia-top-artists/Index";
-import IndonesiaNewReleases from "../../components/content/music-content/indonesia-new-releases/Index";
 
 const Index = () => {
     return (
@@ -19,11 +16,7 @@ const Index = () => {
 
                     {/* Content */}
                     <div className="flex">
-                        <div className="w-full">
-                            <GlobalTopArtists />
-                            <IndonesiaTopArtists />
-                            <IndonesiaNewReleases />
-                        </div>
+                        <div className="w-full"></div>
                     </div>
                 </div>
             </div>

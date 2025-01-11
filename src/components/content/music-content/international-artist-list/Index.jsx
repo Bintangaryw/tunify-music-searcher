@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import ArtistCard from "../../artist-card/Index";
+import ArtistCard from "../../../artist-card/Index";
 
 const Index = () => {
     const [token, setToken] = useState("");

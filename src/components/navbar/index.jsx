@@ -1,5 +1,4 @@
 import notification_png from "../../assets/img/bell.png";
-import avatar_png from "../../assets/img/cat.png";
 
 const Index = () => {
     return (
@@ -13,13 +12,9 @@ const Index = () => {
                         <div className="flex items-center pr-9">
                             <button className="flex items-center">
                                 <img src={notification_png} className="w-8 h-8" />
-                                <p className="text-white pl-5">Notifications</p>
+                                <p className="text-white font-bold pl-3">Notifications</p>
                             </button>
                         </div>
-
-                        <button>
-                            <img src={avatar_png} className="w-8 h-8" />
-                        </button>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,7 @@
 import tunify_logo_clear from "../../assets/img/tunify_logo_clear.png";
-import artist_png from "../../assets/img/microphone.png";
-import album_png from "../../assets/img/album-artwork.png";
-import track_png from "../../assets/img/music-player.png";
 import logout_png from "../../assets/img/export.png";
 import profile_png from "../../assets/img/user.png";
+import { Link } from "react-router-dom";
 
 const Index = () => {
     return (
@@ -15,24 +13,27 @@ const Index = () => {
 
                 {/* Top */}
                 <ul className="flex flex-col gap-4 p-4 flex-grow">
-                    <li className="hover:shadow-md p-2 rounded-xl">
-                        <div className="flex items-center">
-                            <img src={artist_png} className="w-10" />
-                            <p className="pl-5">Artist</p>
-                        </div>
-                    </li>
-                    <li className="hover:shadow-md p-2 rounded-xl">
-                        <div className="flex items-center">
-                            <img src={album_png} className="w-10" />
-                            <p className="pl-5">Album</p>
-                        </div>
-                    </li>
-                    <li className="hover:shadow-md p-2 rounded-xl">
-                        <div className="flex items-center">
-                            <img src={track_png} className="w-10" />
-                            <p className="pl-5">Track</p>
-                        </div>
-                    </li>
+                    <Link to="/">
+                        <li className="hover:shadow-md p-2 rounded-xl">
+                            <div className="flex items-center">
+                                <p className="text-xl font-bold">Music</p>
+                            </div>
+                        </li>
+                    </Link>
+                    <Link to="/podcast">
+                        <li className="hover:shadow-md p-2 rounded-xl">
+                            <div className="flex items-center">
+                                <p className="text-xl font-bold">Podcast</p>
+                            </div>
+                        </li>
+                    </Link>
+                    <Link to="/audiobook">
+                        <li className="hover:shadow-md p-2 rounded-xl">
+                            <div className="flex items-center">
+                                <p className="text-xl font-bold">Audiobook</p>
+                            </div>
+                        </li>
+                    </Link>
                 </ul>
 
                 {/* Bottom */}
@@ -40,13 +41,13 @@ const Index = () => {
                     <li className="hover:shadow-md p-2 rounded-xl">
                         <div className="flex items-center">
                             <img src={profile_png} className="w-10" />
-                            <p className="pl-5">Profile</p>
+                            <p className="pl-4 text-xl font-bold">Profile</p>
                         </div>
                     </li>
                     <li className="hover:shadow-md p-2 rounded-xl">
                         <div className="flex items-center">
                             <img src={logout_png} className="w-10" />
-                            <p className="pl-5">Log out</p>
+                            <p className="pl-4 text-xl font-bold">Log out</p>
                         </div>
                     </li>
                 </ul>

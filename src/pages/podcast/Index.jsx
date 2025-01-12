@@ -1,5 +1,6 @@
 import Sidebar from "../../components/sidebar/Index";
 import Navbar from "../../components/navbar/Index";
+import IndonesiaTopPodcast from "../../components/content/podcast-content/indonesia-top-podcast/Index";
 
 const Index = () => {
     return (
@@ -16,7 +17,9 @@ const Index = () => {
 
                     {/* Content */}
                     <div className="flex">
-                        <div className="w-full"></div>
+                        <div className="w-full">
+                            <IndonesiaTopPodcast />
+                        </div>
                     </div>
                 </div>
             </div>

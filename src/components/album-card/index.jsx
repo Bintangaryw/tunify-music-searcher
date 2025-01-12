@@ -14,9 +14,6 @@ const Index = ({ id, name, artistName, image }) => {
                         <h2 className="text-lg font-bold">{name}</h2>
                         <p className="text-gray-400">{artistName}</p>
                     </div>
-                    {/* <div className="mt-auto mb-3 mr-3">
-                    <button className="w-20 py-2 bg-white text-gray-800 font-medium rounded-full shadow-sm hover:bg-gray-200">Play</button>
-                </div> */}
                 </div>
             </Link>
         </>

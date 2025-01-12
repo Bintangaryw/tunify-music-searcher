@@ -27,13 +27,6 @@ const Index = () => {
                             </div>
                         </li>
                     </Link>
-                    <Link to="/audiobook">
-                        <li className="hover:shadow-md p-2 rounded-xl">
-                            <div className="flex items-center">
-                                <p className="text-xl font-bold">Audiobook</p>
-                            </div>
-                        </li>
-                    </Link>
                 </ul>
 
                 {/* Bottom */}
